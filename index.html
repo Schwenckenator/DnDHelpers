@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>D&D </title>
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="index.js" charset="utf-8"></script>
+    </head>
+    <body>
+        Monster Health Calculator<br/>
+        <!-- HP to Calculate -->
+
+        <input type="text" id="hp2Calc" value = "0"><br>
+        Hit dice code
+        <select id="dice_code" onchange="changeDice(this.value)">
+            <option value="2.5">d4</option>
+            <option value="3.5">d6</option>
+            <option value="4.5">d8</option>
+            <option value="5.5">d10</option>
+            <option value="6.5">d12</option>
+            <option value="10.5">d20</option>
+        </select><br>
+        <button onclick="displayValues()">Calculate</button>
+        <br/>
+        <br/>
+        <table width="150" cellpadding="5" cellspacing="0">
+            <colgroup>
+                <col width="50">
+                <col width="50">
+                <col width="50">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>
+                        CON
+                    </th>
+                    <th>
+                        Dice
+                    </th>
+                    <th>
+                        Avg. HP
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        -5
+                    </td>
+                    <td>
+                        <span id="code_con-5">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con-5">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        -4
+                    </td>
+                    <td>
+                        <span id="code_con-4">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con-4">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        -3
+                    </td>
+                    <td>
+                        <span id="code_con-3">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con-3">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        -2
+                    </td>
+                    <td>
+                        <span id="code_con-2">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con-2">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        -1
+                    </td>
+                    <td>
+                        <span id="code_con-1">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con-1">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +0
+                    </td>
+                    <td>
+                        <span id="code_con+0">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+0">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +1
+                    </td>
+                    <td>
+                        <span id="code_con+1">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+1">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +2
+                    </td>
+                    <td>
+                        <span id="code_con+2">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+2">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +3
+                    </td>
+                    <td>
+                        <span id="code_con+3">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+3">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +4
+                    </td>
+                    <td>
+                        <span id="code_con+4">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+4">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +5
+                    </td>
+                    <td>
+                        <span id="code_con+5">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+5">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +6
+                    </td>
+                    <td>
+                        <span id="code_con+6">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+6">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +7
+                    </td>
+                    <td>
+                        <span id="code_con+7">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+7">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +8
+                    </td>
+                    <td>
+                        <span id="code_con+8">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+8">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +9
+                    </td>
+                    <td>
+                        <span id="code_con+9">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+9">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        +10
+                    </td>
+                    <td>
+                        <span id="code_con+10">1d4+0</span>
+                    </td>
+                    <td>
+                        <span id="hp_con+10">0</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
