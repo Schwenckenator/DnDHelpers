@@ -1,0 +1,28 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    color: #111111;
+    background-color: #f9f9f9;
+}
+
+.input{
+    background-color: #eeeeee;
+}
+
+.title{
+    font-size: 2em;
+}
+
+
+.table{
+    min-height: 150px;
+}
+
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+@-ms-viewport{
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
