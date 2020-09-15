@@ -2,8 +2,10 @@ var diceAvg = 2.5; //Default value
 var diceSize = 4;
 
 function changeDice(dice){
-    diceAvg = Number.parseFloat(dice);
-    diceSize = GetDiceSizeFromAvg(diceAvg);
+    //diceAvg = Number.parseFloat(dice);
+    //diceSize = GetDiceSizeFromAvg(diceAvg);
+    diceSize = Number.parseFloat(dice);
+    diceAvg = GetDiceAvgFromSize(diceSize);
     //console.log("Change Dice; incoming value = " + dice);
     //console.log("Change Dice; New DiceAvg = " + diceAvg);
 }
@@ -16,6 +18,10 @@ function displayValues(){
 
 function GetDiceSizeFromAvg(avg){
     return Math.round(avg * 2 - 1);
+}
+
+function GetDiceAvgFromSize(size){
+    return (size / 2) + 0.5;
 }
 
 function calculate(con){
