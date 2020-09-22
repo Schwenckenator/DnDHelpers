@@ -2,18 +2,52 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1em;
     color: #111111;
-    background-color: #f9f9f9;
+    
 }
 
-.input{
-    background-color: #eeeeee;
-    /* padding: 5px; */
-    margin: 5px;
+.menu{
+    width: 200px;
+    height: 100%;
+    background-color: blueviolet;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.menuItem{
+    color: #eeeeee;
+}
+
+.menu a{
+    text-decoration: none;
+    line-height: 30px;
+    padding-left: 15px;
+}
+.menu a:hover{
+    color:orange;
 }
 
 .title{
     font-size: 2em;
+    font-weight: 500;
 }
+
+
+.main{
+    margin-left: 200px;
+    padding: 0px 10px;
+}
+
+
+.input{
+    background-color: #eeeeee;
+    margin: 5px;
+}
+
+
 
 .row{
     display:block;
