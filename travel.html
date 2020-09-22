@@ -19,8 +19,8 @@
             <div class="row">
                 <div class="col">
                     <div class="label">Season</div>
-                    <select id="season" class="input">
-                        <option value="select">Select Season</option>
+                    <select id="season" class="input" onchange="onChangeSeason(this.value)">
+                        <option value="" selected hidden disabled>Select Season</option>
                         <option value="polar_summer">Polar Summer</option>
                         <option value="summer">Summer</option>
                         <option value="autumn">Autumn</option>
@@ -31,29 +31,41 @@
                 </div>
                 <div class="col">
                     <div class="label">Departing</div>
-                    <select id="depart" class="input">
-                        <option value="dawn">Dawn</option>
-                        <option value="morning">Morning</option>
-                        <option value="afternoon">Afternoon</option>
-                        <option value="evening">Evening</option>
-                        <option value="night">Night</option>
-                        <option value="predawn">Pre-dawn</option>
+                    <select id="depart" class="input" onchange="onChangeDepart(this.value)">
+                        <option value="0" selected>Dawn</option>
+                        <option value="1">Morning</option>
+                        <option value="2">Afternoon</option>
+                        <option value="3">Evening</option>
+                        <option value="4">Night</option>
+                        <option value="5">Pre-dawn</option>
                     </select>
                 </div>
                 <div class="col">
                     <div class="label">Arriving</div>
-                    <select id="depart" class="input">
-                        <option value="dawn">Dawn</option>
-                        <option value="morning">Morning</option>
-                        <option value="afternoon">Afternoon</option>
-                        <option value="evening">Evening</option>
-                        <option value="night">Night</option>
-                        <option value="predawn">Pre-dawn</option>
+                    <select id="depart" class="input" value="2" onchange="onChangeArrival(this.value)">
+                        <option value="0">Dawn</option>
+                        <option value="1">Morning</option>
+                        <option value="2" selected>Afternoon</option>
+                        <option value="3">Evening</option>
+                        <option value="4">Night</option>
+                        <option value="5">Pre-dawn</option>
                     </select>
                 </div>
                 <div class="col">
                     <div class="empty"></div>
-                    <button class="input">Travel!</button>
+                    <button class="input" onclick="travel()">Travel!</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="label">Roll dice pool:</div>
+                    <div class="answer" id="pool_dawn">Dawn, 1d6</div>
+                    <div class="answer" id="pool_morning">Morning, 2d6</div>
+                    <div class="answer" id="pool_afternoon">Afternoon, 3d6</div>
+                    <div class="answer" id="pool_evening">Evening, 4d6</div>
+                    <div class="answer" id="pool_night">Night, 5d6</div>
+                    <div class="answer" id="pool_predawn">Pre-dawn, 6d6</div>
+                    <div class="answer" id="pool_full">Full pool, 6d6</div>
                 </div>
             </div>
         </div>
