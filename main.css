@@ -7,15 +7,37 @@
 
 .input{
     background-color: #eeeeee;
+    /* padding: 5px; */
+    margin: 5px;
 }
 
 .title{
     font-size: 2em;
 }
 
+.row{
+    display:block;
+    width:100%;
+}
+
+.col{
+    float: left;
+    width: auto;
+    /* border: black; */
+}
+
+.empty{
+    min-height: 20px;
+    margin: 5px;
+}
+
 
 .table{
     min-height: 150px;
+}
+
+.label{
+    margin: 5px;
 }
 
 @viewport{
