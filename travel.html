@@ -30,6 +30,19 @@
                     </select>
                 </div>
                 <div class="col">
+                    <div class="label">Climate</div>
+                    <select id="climate" class="input" onchange="onChangeClimate(this.value)">
+                        <option value="" selected hidden disabled>Select Climate</option>
+                        <option value="0">Jungle</option>
+                        <option value="1">Savannah</option>
+                        <option value="2">Mountains</option>
+                        <option value="3">Subtropical Rainforest</option>
+                        <option value="3">Temperate</option>
+                        <option value="4">Tundra</option>
+                        <option value="5">Arctic</option>
+                    </select>
+                </div>
+                <div class="col">
                     <div class="label">Departing</div>
                     <select id="depart" class="input" onchange="onChangeDepart(this.value)">
                         <option value="0" selected>Dawn</option>
@@ -42,7 +55,7 @@
                 </div>
                 <div class="col">
                     <div class="label">Arriving</div>
-                    <select id="depart" class="input" value="2" onchange="onChangeArrival(this.value)">
+                    <select id="arrive" class="input" value="2" onchange="onChangeArrival(this.value)">
                         <option value="0">Dawn</option>
                         <option value="1">Morning</option>
                         <option value="2" selected>Afternoon</option>
@@ -52,9 +65,22 @@
                     </select>
                 </div>
                 <div class="col">
+                    <div class="label">Navigation</div>
+                    <select id="navigation" class="input" value="2" onchange="onChangeNavigation(this.value)">
+                        <option value="0">Following road or river</option>
+                        <option value="1">Clear Terrain</option>
+                        <option value="2">Visibility reducing Terrain</option>
+                        <option value="3">Featureless Desert</option>
+                        <option value="4">Magically Difficult Terrain</option>
+                    </select>
+                </div>
+                <div class="col">
                     <div class="empty"></div>
                     <button class="input" onclick="travel()">Travel!</button>
                 </div>
+            </div>
+            <div class="row">
+                <span class="error" id="error"></span>
             </div>
             <div class="row">
                 <div class="col">

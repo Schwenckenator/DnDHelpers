@@ -47,16 +47,25 @@
     margin: 5px;
 }
 
-
+.error{
+    color:#ee0000;
+    font-weight: 600;
+}
 
 .row{
     display:block;
     width:100%;
 }
 
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .col{
     float: left;
-    width: auto;
+    width: fit-content;
     /* border: black; */
 }
 
