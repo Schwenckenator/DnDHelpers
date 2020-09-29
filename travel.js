@@ -27,6 +27,7 @@ var seasonDict = {
     }
 };
 
+//#region onChange
 function onChangeSeason(input){
     season = input;
 }
@@ -46,6 +47,7 @@ function onChangeArrival(input){
 function onChangeNavigation(input){
     navigation = Number.parseFloat(input);
 }
+//#endregion
 
 function travel(){
     hideError();
@@ -103,6 +105,14 @@ function travel(){
         hideElement(poolIds[i]);
     }
     dicePoolRolls.forEach(x => showElement(poolIds[x]));
+
+    // Navigation
+    if(navigation > 0){
+        let navStr = "DC " + navigation;
+        setInnerHtml("nav_DC", navStr);
+    }else{
+        setInnerHtml("nav_DC", "Success!");
+    }
 }
 
 function errorMessage(s){
@@ -138,4 +148,8 @@ function showElement(id){
 
 function hideElement(id){
     document.getElementById(id).style.display = 'none';
+}
+
+function setInnerHtml(id, str){
+    document.getElementById(id).innerHTML = str;
 }
