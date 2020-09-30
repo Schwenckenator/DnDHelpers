@@ -113,6 +113,19 @@ function travel(){
     }else{
         setInnerHtml("nav_DC", "Success!");
     }
+
+    if (travelLen > 3){
+        let endStr = "DC 10 Con save.";
+        if(travelLen > 4){
+            endStr+= "<br>DC 15 Con save.";
+            if(travelLen > 5){
+                endStr+= "<br>DC 20 Con save.";
+            }
+        }
+        setInnerHtml("endurance_checks", endStr);
+    }else{
+        setInnerHtml("endurance_checks", "No Endurance checks.");
+    }
 }
 
 function errorMessage(s){
