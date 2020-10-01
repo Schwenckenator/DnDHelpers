@@ -1,16 +1,19 @@
 var season = "";
 var climate = "";
 var depart = 0;
-var arrive = 0;
+var arrive = 2;
 var navigation = 0;
+var paceIndex = 1;
 
 var poolIds = ["pool_dawn", "pool_morning", "pool_afternoon", "pool_evening", "pool_night", "pool_predawn", "pool_full"];
+
+var pace = [6, 8, 10]; // Slow, normal, fast
 
 var seasonDict = {
     polar_summer: {
         light: ["day", "day", "day", "day", "day", "twilight"]
     },
-    summer : {
+    summer: {
         light: ["day", "day", "day", "day", "twilight", "night"]
     }, 
     autumn: {
@@ -27,6 +30,15 @@ var seasonDict = {
     }
 };
 
+var climateTempDict = {
+    mountains: {
+        summer: "warm",
+        autumn: "cool",
+        winter: "cold",
+        spring: "cool"
+    }
+}
+
 //#region onChange
 function onChangeSeason(input){
     season = input;
@@ -37,15 +49,19 @@ function onChangeClimate(input){
 }
 
 function onChangeDepart(input){
-    depart = Number.parseFloat(input);
+    depart = Number.parseInt(input);
 }
 
 function onChangeArrival(input){
-    arrive = Number.parseFloat(input);
+    arrive = Number.parseInt(input);
 }
 
 function onChangeNavigation(input){
-    navigation = Number.parseFloat(input);
+    navigation = Number.parseInt(input);
+}
+
+function onChangePace(input){
+    paceIndex = Number.parseInt(input);
 }
 //#endregion
 
@@ -92,41 +108,60 @@ function travel(){
     //#endregion
     
     let seasonObj = getSeason(season);
+    
+    CheckForNightTravel(seasonObj);
+    CheckNavigation();
+    CheckExhaustion(travelLen);
+    displayDistance(travelLen, pace[paceIndex]);
+}
+
+function CheckForNightTravel(seasonObj) {
     let dicePoolRolls = [];
 
-    for(let i=depart; i<=arrive; i++){
-        if(seasonObj.light[i] != "day"){
+    for (let i = depart; i <= arrive; i++) {
+        if (seasonObj.light[i] != "day") {
             dicePoolRolls.push(i);
         }
     }
 
     showElement("pool_full");
-    for(let i=0; i<6;i++){
+    for (let i = 0; i < 6; i++) {
         hideElement(poolIds[i]);
     }
     dicePoolRolls.forEach(x => showElement(poolIds[x]));
+}
 
-    // Navigation
-    if(navigation > 0){
+function CheckNavigation() {
+    if (navigation > 0) {
         let navStr = "DC " + navigation;
         setInnerHtml("nav_DC", navStr);
-    }else{
+    } else {
         setInnerHtml("nav_DC", "Success!");
     }
+}
 
-    if (travelLen > 3){
+function CheckExhaustion(travelLen) {
+    if (travelLen > 3) {
         let endStr = "DC 10 Con save.";
-        if(travelLen > 4){
-            endStr+= "<br>DC 15 Con save.";
-            if(travelLen > 5){
-                endStr+= "<br>DC 20 Con save.";
+        if (travelLen > 4) {
+            endStr += "<br>DC 15 Con save.";
+            if (travelLen > 5) {
+                endStr += "<br>DC 20 Con save.";
             }
         }
         setInnerHtml("endurance_checks", endStr);
-    }else{
-        setInnerHtml("endurance_checks", "No Endurance checks.");
+    } else {
+        setInnerHtml("endurance_checks", "No checks.");
     }
 }
+
+function displayDistance(len, pace){
+    console.log("Travel Length, pace; " + len + ", " +  pace);
+    let dist = len * pace;
+    dist += " mi.";
+    setInnerHtml("dist_travel", dist);
+}
+
 
 function errorMessage(s){
     showElement("error");
