@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>D&amp;D Encumbrance Tool</title>
         <link rel="stylesheet" href="main.css">
-        <script type="text/javascript" src="index.js" charset="utf-8"></script>
+        <script type="text/javascript" src="encumbrance.js" charset="utf-8"></script>
     </head>
     <body>
         <div class="menu">
@@ -25,36 +25,39 @@
             <br>
             <div>
                 On Person:
+                <button onclick="addNewRow('onPerson')">Add Row</button>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="label">Equip</div>
-                    <div style="margin: 5px; line-height: 30px; vertical-align: middle;">
-                        <input class="input short" type="checkbox" >
+            <div id="onPerson" class="encumbrace_table">
+                <div class="row">
+                    <div class="col">
+                        <div class="label">Equip</div>
+                        <div style="margin: 5px; line-height: 30px; vertical-align: middle;">
+                            <input class="input short" type="checkbox" >
+                        </div>
+                        <!-- &nbsp; -->
                     </div>
-                    <!-- &nbsp; -->
-                </div>
-                <div class="col">
-                    <div class="label">Qty.</div>
-                    <input class="input short" type="text">
-                </div>
-                <div class="col">
-                    <div class="label">Item Name</div>
-                    <input class="input" type="text">
-                </div>
-                <div class="col">
-                    <div class="label">Bulk</div>
-                    <select class="input">
-                        <option value="0.01">Tiny (100 to 1)</option>
-                        <option value="0.1">Small (10 to 1)</option>
-                        <option value="1">Normal (1)</option>
-                        <option value="2">Weighty (2)</option>
-                        <option value="5">Massive (5)</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <div class="label">Total Bulk</div>
-                    <input class="input short" type="text" readonly>
+                    <div class="col">
+                        <div class="label">Qty.</div>
+                        <input class="input short" type="text">
+                    </div>
+                    <div class="col">
+                        <div class="label">Item Name</div>
+                        <input class="input" type="text">
+                    </div>
+                    <div class="col">
+                        <div class="label">Bulk</div>
+                        <select class="input">
+                            <option value="0.01">Tiny (100 to 1)</option>
+                            <option value="0.1">Small (10 to 1)</option>
+                            <option value="1">Normal (1)</option>
+                            <option value="2">Weighty (2)</option>
+                            <option value="5">Massive (5)</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <div class="label">Total Bulk</div>
+                        <input class="input short" type="text" readonly>
+                    </div>
                 </div>
             </div>
         </div>
