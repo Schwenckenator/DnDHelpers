@@ -1,5 +1,6 @@
 var season = "";
-var climate = "";
+var climate;
+var climateCode = "";
 var depart = 0;
 var arrive = 2;
 var navigation = 0;
@@ -30,22 +31,19 @@ var seasonDict = {
     }
 };
 
-var climateTempDict = {
-    mountains: {
-        summer: "warm",
-        autumn: "cool",
-        winter: "cold",
-        spring: "cool"
-    }
-}
-
 //#region onChange
 function onChangeSeason(input){
     season = input;
 }
 
 function onChangeClimate(input){
-    climate = input;
+    climateCode = input;
+    climate = {
+        summerTemp:             Number.parseInt(input.charAt(0)),
+        summerPrecipitation:    Number.parseInt(input.charAt(1)),
+        winterTemp:             Number.parseInt(input.charAt(2)),
+        winterPrecipitation:    Number.parseInt(input.charAt(3))
+    }
 }
 
 function onChangeDepart(input){
@@ -155,6 +153,35 @@ function CheckExhaustion(travelLen) {
     }
 }
 
+function CalculateCurrentWeather(){
+    let avgTemp;
+    let avgPrecip;
+    //Find temperature from season
+    //Find wetness from season
+    if(season == "polar_summer" || season == "summer"){
+        avgTemp = climate.summerTemp;
+        avgPrecip = climate.summerPrecipitation;
+    }else if(season == "spring"){
+        avgTemp = Math.floor((climate.summerTemp + climate.winterTemp)/2);
+        avgPrecip = climate.summerPrecipitation;
+    }else if(season == "polar_winter" || season == "winter"){
+        avgTemp = climate.winterTemp;
+        avgPrecip = climate.winterPrecipitation;
+    }else if(season == "autumn"){
+        avgTemp = Math.floor((climate.summerTemp + climate.winterTemp)/2);
+        avgPrecip = climate.winterPrecipitation;
+    }else{
+        console.log("Season is not valid!!!!");
+        errorMessage("Season is not valid!");
+        return;
+    }
+    
+    let temp = avgTemp + getRandInt(-2, 3);
+    let precip = avgPrecip + getRandInt(-2, 3);
+    //Roll to see if temp is high or low for the day
+    
+}
+
 function displayDistance(len, pace){
     console.log("Travel Length, pace; " + len + ", " +  pace);
     let dist = len * pace;
@@ -188,6 +215,10 @@ function getSeason(str){
     }else if(str=="polar_winter"){
         return seasonDict.polar_winter;
     }
+}
+
+function getRandInt(min, max){
+    return Math.floor(Math.random() * (max - min)+min);
 }
 
 function showElement(id){

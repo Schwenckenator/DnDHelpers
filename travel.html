@@ -16,6 +16,9 @@
         
         <div class="main">
             <div class="title">Travel Tool</div>
+            
+            <!-- INPUT -->
+            
             <div class="row">
                 <div class="col">
                     <div class="label">Season</div>
@@ -32,14 +35,23 @@
                 <div class="col">
                     <div class="label">Climate</div>
                     <select id="climate" class="input" onchange="onChangeClimate(this.value)">
+                        <!-- Code goes (summer temp, summer wet, winter temp, winter wet) -->
                         <option value="" selected hidden disabled>Select Climate</option>
-                        <option value="0">Jungle</option>
-                        <option value="1">Savannah</option>
-                        <option value="2">Mountains</option>
-                        <option value="3">Subtropical Rainforest</option>
-                        <option value="3">Temperate</option>
-                        <option value="4">Tundra</option>
-                        <option value="5">Arctic</option>
+                        <option value="8686">Tropical Rainforest</option>
+                        <option value="8960">Tropical Monsoon</option>
+                        <option value="8660">Tropical Savannah</option>
+                        <option value="9060">Hot Desert</option>
+                        <option value="8161">Hot Steppe</option>
+                        <option value="8653">Humid Subtropical</option>
+                        <option value="7311">Humid Continental</option>
+                        <option value="8043">Mediterranean</option>
+                        <option value="5626">Temperate Rainforest</option>
+                        <option value="5626">Oceanic</option>
+                        <option value="8010">Cold Desert</option>
+                        <option value="6111">Cold Steppe</option>
+                        <option value="3300">Subarctic Continental</option>
+                        <option value="1200">Polar Tundra</option>
+                        <option value="0200">Polar Icecap</option>
                     </select>
                 </div>
                 <div class="col">
@@ -90,7 +102,14 @@
             <div class="row">
                 <span class="error" id="error"></span>
             </div>
+
+            <!-- Results -->
+
             <div class="row">
+                <div class="col">
+                    <div class="label">Daily Distance Travelled:</div>
+                    <span class="answer" id="dist_travel"></span>
+                </div>
                 <div class="col">
                     <div class="label">Roll dice pool:</div>
                     <div class="answer" id="pool_dawn">Dawn, 1d6</div>
@@ -115,12 +134,7 @@
                     
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="label">Daily Distance Travelled:</div>
-                    <span class="answer" id="dist_travel"></span>
-                </div>
-            </div>
+
         </div>
     </body>
 </html>
