@@ -18,14 +18,17 @@
 }
 
 .menuItem{
-    color: #eeeeee;
+    line-height: 30px;
+    padding-left: 15px;
+    float: left;
+    clear: left;
 }
 
 .menu a{
     text-decoration: none;
-    line-height: 30px;
-    padding-left: 15px;
+    color: #eeeeee;
 }
+
 .menu a:hover{
     color:orange;
 }
@@ -43,8 +46,17 @@
 
 
 .input{
-    background-color: #eeeeee;
+    background-color: #ffffff;
     margin: 5px;
+}
+
+.input:read-only{
+    background-color: #eeeeee;
+}
+
+
+.short{
+    width: 55px;
 }
 
 .answer{

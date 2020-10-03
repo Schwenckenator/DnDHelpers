@@ -3,25 +3,60 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>D&D </title>
+        <title>D&amp;D Encumbrance Tool</title>
         <link rel="stylesheet" href="main.css">
         <script type="text/javascript" src="index.js" charset="utf-8"></script>
     </head>
     <body>
         <div class="menu">
-            <a class="title menuItem" href="index.html">D&D helpers</a><br>
+            <a class="title" href="index.html">D&amp;D helpers</a><br>
             <a class="menuItem" href="enc_tool.html">Encumbrance Tool</a>
             <a class="menuItem" href="npc_hit_dice.html">NPC hit dice calculator</a>
             <a class="menuItem" href="travel.html">Travel Tool</a>
         </div>
         
         <div class="main">
-            <div class="title">D&D Helpers</div>
-
-            <p>
-                Here's a bunch of different tools that I use for running D&D.
-                Links on the left &lt;--.
-            </p>
+            <div class="title">Encumbrance Tool</div>
+            <div class="empty"></div>
+            <div>
+                Character: <input class="input" type="text">
+                Strength: <input class="input" type="text">
+            </div>
+            <br>
+            <div>
+                On Person:
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="label">Equip</div>
+                    <div style="margin: 5px; line-height: 30px; vertical-align: middle;">
+                        <input class="input short" type="checkbox" >
+                    </div>
+                    <!-- &nbsp; -->
+                </div>
+                <div class="col">
+                    <div class="label">Qty.</div>
+                    <input class="input short" type="text">
+                </div>
+                <div class="col">
+                    <div class="label">Item Name</div>
+                    <input class="input" type="text">
+                </div>
+                <div class="col">
+                    <div class="label">Bulk</div>
+                    <select class="input">
+                        <option value="0.01">Tiny (100 to 1)</option>
+                        <option value="0.1">Small (10 to 1)</option>
+                        <option value="1">Normal (1)</option>
+                        <option value="2">Weighty (2)</option>
+                        <option value="5">Massive (5)</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <div class="label">Total Bulk</div>
+                    <input class="input short" type="text" readonly>
+                </div>
+            </div>
         </div>
     </body>
 </html>
