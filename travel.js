@@ -179,7 +179,8 @@ function CalculateCurrentWeather(){
     let temp = avgTemp + getRandInt(-2, 3);
     let precip = avgPrecip + getRandInt(-2, 3);
     //Roll to see if temp is high or low for the day
-    
+
+
 }
 
 function displayDistance(len, pace){
@@ -197,6 +198,12 @@ function errorMessage(s){
 
 function hideError(){
     hideElement("error");
+}
+
+function tempLookup(num){
+    if(num <0){
+        
+    }
 }
 
 function getSeason(str){
