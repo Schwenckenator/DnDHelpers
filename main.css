@@ -44,7 +44,6 @@
     padding: 0px 10px;
 }
 
-
 .input{
     background-color: #ffffff;
     margin: 5px;
@@ -55,8 +54,9 @@
 }
 
 
+
 .short{
-    width: 55px;
+    width: 50px;
 }
 
 .answer{
@@ -85,6 +85,44 @@
     float: left;
     width: fit-content;
     /* border: black; */
+}
+
+.table{
+    width: 100%;
+    display:table;
+}
+
+.tcaption{
+    display: table-caption;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.theader{
+    display: table-header-group;
+    background-color: lightgrey;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.theadercell{
+    display: table-cell;
+    padding: 10px;
+    text-align: justify;
+    border-bottom: 1px solid black;
+}
+
+.tbody{
+    display: table-row-group;
+}
+
+.trow{
+    display: table-row;
+}
+
+.tcell{
+    display: table-cell;
 }
 
 .empty{
