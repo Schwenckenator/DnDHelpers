@@ -27,50 +27,27 @@
                 On Person:
                 <button onclick="addNewRow('onPerson')">Add Row</button>
             </div> -->
-            <div id="onPerson" class="table"></div>
+            <div class="table">
                 <div class="tcaption">
                     On Person
                 </div>
                 <div class="theader">
-                    <div class="theadercell">Equip</div>
-                    <div class="theadercell">Qty.</div>
+                    <div class="theadercell" style="width: 50px">Equip</div>
+                    <div class="theadercell" style="width: 50px">Qty.</div>
                     <div class="theadercell">Item Name</div>
                     <div class="theadercell">Bulk</div>
                     <div class="theadercell">Total Bulk</div>
                 </div>
-                <div class="tbody">
-                    <div class="trow">
+                <div class="tbody" id="onPerson">
+                    <div class="trow" id="row_proto">
                         <div class="tcell">
-                            <input class="input short" type="checkbox" >
+                            <input class="input short" type="checkbox">
                         </div>
                         <div class="tcell">
-                            <input class="input short" type="text">
+                            <input class="input short" type="text" value="1">
                         </div>
                         <div class="tcell">
-                            <input class="input" type="text">
-                        </div>
-                        <div class="tcell">
-                            <select class="input">
-                                <option value="0.01">Tiny (100 to 1)</option>
-                                <option value="0.1">Small (10 to 1)</option>
-                                <option value="1" selected>Normal (1)</option>
-                                <option value="2">Weighty (2)</option>
-                                <option value="5">Massive (5)</option>
-                            </select>
-                        </div>
-                        <div class="tcell">
-                            <input class="input short" type="text" readonly>
-                        </div>
-                    </div>
-                    <div class="trow">
-                        <div class="tcell">
-                            <input class="input short" type="checkbox" >
-                        </div>
-                        <div class="tcell">
-                            <input class="input short" type="text">
-                        </div>
-                        <div class="tcell">
-                            <input class="input" type="text">
+                            <input class="input" type="text" style="width: 90%;">
                         </div>
                         <div class="tcell">
                             <select class="input">
@@ -86,53 +63,9 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="addNewRow('onPerson')">Add Row</button>
+                
             </div>
-
-
-                <div class="row">
-                    <div class="col">
-                        <div class="label">Equip</div>
-                    </div>
-                    <div class="col">
-                        <div class="label">Qty.</div>
-                    </div>
-                    <div class="col">
-                        <div class="label">Item Name</div>
-                    </div>
-                    <div class="col">
-                        <div class="label">Bulk</div>
-                    </div>
-                    <div class="col">
-                        <div class="label">Total Bulk</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div style="margin: 5px; line-height: 30px; vertical-align: middle;">
-                            <input class="input short" type="checkbox" >
-                        </div>
-                    </div>
-                    <div class="col">
-                        <input class="input short" type="text">
-                    </div>
-                    <div class="col">
-                        <input class="input" type="text">
-                    </div>
-                    <div class="col">
-                        <select class="input">
-                            <option value="0.01">Tiny (100 to 1)</option>
-                            <option value="0.1">Small (10 to 1)</option>
-                            <option value="1">Normal (1)</option>
-                            <option value="2">Weighty (2)</option>
-                            <option value="5">Massive (5)</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <input class="input short" type="text" readonly>
-                    </div>
-                </div>
-            </div>
+            <button onclick="addNewRow('onPerson')">Add Row</button>
         </div>
     </body>
 </html>
