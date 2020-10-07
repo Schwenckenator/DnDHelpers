@@ -126,6 +126,20 @@
     display: table-cell;
 }
 
+.tfooter{
+    display:table-footer-group;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: lightgrey;
+}
+
+.tfootercell{
+    display: table-cell;
+    text-align: justify;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
 .empty{
     min-height: 20px;
     margin: 5px;

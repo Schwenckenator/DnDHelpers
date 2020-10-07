@@ -20,7 +20,7 @@
             <div class="empty"></div>
             <div>
                 Character: <input class="input" type="text">
-                Strength: <input class="input" type="text">
+                Strength: <input class="input" type="text" id="strength" value=10 onchange="onChangeStrength(this.value)">
             </div>
             <br>
             <!-- <div>
@@ -29,7 +29,13 @@
             </div> -->
             <div class="table">
                 <div class="tcaption">
-                    On Person
+                    On Person: Bulk
+                    <div id="onPerson_totalBulk" style="display: inline;">0</div>
+                    /
+                    <div id="onPerson_bulkLimit" style="display: inline;">10</div>
+                    <div id="onPerson_encumbered" style="display: none;">
+                        Overload
+                    </div>
                 </div>
                 <div class="theader">
                     <div class="theadercell" style="width: 50px">Equip</div>
@@ -39,18 +45,18 @@
                     <div class="theadercell">Total Bulk</div>
                 </div>
                 <div class="tbody" id="onPerson">
-                    <div class="trow" id="row_proto">
+                    <div class="trow" id="onPerson_0">
                         <div class="tcell">
                             <input class="input short" type="checkbox">
                         </div>
                         <div class="tcell">
-                            <input class="input short" type="text" value="1">
+                            <input class="input short" id="onPerson_0_qty" type="text" value="0" onchange="onChangeRow('onPerson', 'onPerson_0')">
                         </div>
                         <div class="tcell">
                             <input class="input" type="text" style="width: 90%;">
                         </div>
                         <div class="tcell">
-                            <select class="input">
+                            <select class="input" id="onPerson_0_bulk" onchange="onChangeRow('onPerson', 'onPerson_0')">
                                 <option value="0.01">Tiny (100 to 1)</option>
                                 <option value="0.1">Small (10 to 1)</option>
                                 <option value="1" selected>Normal (1)</option>
@@ -59,13 +65,20 @@
                             </select>
                         </div>
                         <div class="tcell">
-                            <input class="input short" type="text" readonly>
+                            <input class="input short" type="text" id="onPerson_0_totalBulk" readonly>
                         </div>
                     </div>
                 </div>
-                
+                <div class="tfooter">
+                    <div class="tfootercell"></div>
+                    <div class="tfootercell"></div>
+                    <div class="tfootercell"></div>
+                    <div class="tfootercell"></div>
+                    <div class="tfootercell"></div>
+                </div>
             </div>
-            <button onclick="addNewRow('onPerson')">Add Row</button>
+            <button onclick="addRow('onPerson')">Add Row</button>
+            <button onclick="deleteRow('onPerson')">Delete Row</button>
         </div>
     </body>
 </html>
