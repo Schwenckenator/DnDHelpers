@@ -53,7 +53,9 @@
     background-color: #eeeeee;
 }
 
-
+tr{
+    text-align: center;
+}
 
 .short{
     width: 50px;

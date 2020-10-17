@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>D&amp;D NPC hit dice</title>
         <link rel="stylesheet" href="main.css">
-        <script type="text/javascript" src="index.js" charset="utf-8"></script>
+        <script type="text/javascript" src="hitDice.js" charset="utf-8"></script>
     </head>
     <body>
         <div class="menu">
@@ -33,16 +33,16 @@
             <button class="input" onclick="displayValues()">Calculate</button>
             <br/>
             <br/>
-            <table class="table" width="150" cellpadding="5" cellspacing="0">
+            <table class="centre_text" width="200" cellpadding="5" cellspacing="0">
                 <colgroup>
                     <col width="50">
-                    <col width="50">
+                    <col width="100">
                     <col width="50">
                 </colgroup>
                 <tbody>
                     <tr>
                         <th>
-                            CON
+                            <p >CON</p>
                         </th>
                         <th>
                             Dice
@@ -56,7 +56,7 @@
                             -5
                         </td>
                         <td>
-                            <span id="code_con-5"></span>
+                            <span class="centre_text" id="code_con-5"></span>
                         </td>
                         <td>
                             <span id="hp_con-5"></span>
