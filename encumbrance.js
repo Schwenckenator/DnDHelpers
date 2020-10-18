@@ -2,7 +2,11 @@
 var itemRowHtml;
 var itemRowDiv;
 
+var tableHtml;
+
 var tableLengths = [];
+
+var tableCount = 1;
 
 function addRow(tableId){
     
@@ -39,6 +43,25 @@ function deleteRow(tableId, index=-1){
     tableLengths[tableId] -= 1;
 }
 
+function addTable(){
+
+    let container = document.getElementById("tableContainer");
+    let newTable = document.createElement("div");
+    let tableId = "t" + tableCount;
+
+    newTable.setAttribute("class", "table");
+    newTable.setAttribute("id", tableId);
+    newTable.innerHTML = tableHtml;
+    container.append(newTable);
+
+    newTable.children[0].children[0].id = tableId + "_name";
+    newTable.children[0].children[1].id = tableId + "_totalBulk";
+    newTable.children[0].children[2].id = tableId + "_bulkLimit";
+    newTable.children[0].children[3].id = tableId + "_encumbered";
+
+    tableCount++;
+}
+
 function calculateRowBulk(rowId){
     let quantity = document.getElementById(rowId + "_qty").value;
     let singleBulk = document.getElementById(rowId + "_bulk").value;
@@ -66,7 +89,7 @@ function calculateOverload(tableId){
     console.log("Total bulk = " + totalBulk + ". Bulk limit = " + bulkLimit);
 
     if(totalBulk > bulkLimit){
-        document.getElementById(tableId +  "_encumbered").style.display = "block";
+        document.getElementById(tableId +  "_encumbered").style.display = "inline";
     }else{
         document.getElementById(tableId +  "_encumbered").style.display = "none";
     }
@@ -98,6 +121,9 @@ function onChangeStrength(strength){
 
 window.onload = function(){
     itemRowHtml = document.getElementById("onPerson_0").innerHTML;
-    let row = document.getElementById("onPerson_0");
+    tableHtml = document.getElementById("tableContainer").children[0].innerHTML;
     tableLengths["onPerson"] = 1;
+    tableCount = 1;
+
+
 }
