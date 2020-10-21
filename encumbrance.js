@@ -19,11 +19,14 @@ function addRow(tableId){
     newRow.innerHTML = itemRowHtml;
     table.append(newRow);
 
+    newRow.children[0].children[0].id = rowId + "_equipped";
+    newRow.children[1].children[0].setAttribute("onchange", "onChangeRow('" + tableId + "', '" + rowId + "')");
+
     newRow.children[1].children[0].id = rowId + "_qty";
-    newRow.children[1].children[0].setAttribute("onchange", "onChangeRow('onPerson', 'onPerson_" + tableLengths[tableId] + "')");
+    newRow.children[1].children[0].setAttribute("onchange", "onChangeRow('" + tableId + "', '" + rowId + "')");
 
     newRow.children[3].children[0].id = rowId + "_bulk";
-    newRow.children[3].children[0].setAttribute("onchange", "onChangeRow('onPerson', 'onPerson_" + tableLengths[tableId] + "')");
+    newRow.children[3].children[0].setAttribute("onchange", "onChangeRow('" + tableId + "', '" + rowId + "')");
 
     newRow.children[4].children[0].id = rowId + "_totalBulk";
 
@@ -58,6 +61,12 @@ function addTable(){
     newTable.children[0].children[1].id = tableId + "_totalBulk";
     newTable.children[0].children[2].id = tableId + "_bulkLimit";
     newTable.children[0].children[3].id = tableId + "_encumbered";
+
+    newTable.children[2].id = tableId;
+    let rowId = tableId + "_0";
+    
+    addRow(tableId);
+
 
     tableCount++;
 }
